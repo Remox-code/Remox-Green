@@ -1,0 +1,174 @@
+.hero-section-background {
+  background-image: url("../assets/images/backgroung.jpg"); /* مسیر عکس اصلی */
+  background-size: cover;
+  background-position: center;
+  position: relative; /* برای قرار دادن المان‌ها روی آن */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* ارتفاع دلخواه */
+}
+
+.hero-section-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit; /* ارث‌بری از والد */
+  filter: blur(5px) brightness(0.7); /* فیلترهای مورد نظر */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative; /* برای اینکه روی افکت قرار بگیرد */
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem; /* سایز بزرگ برای عنوان */
+  margin-bottom: 1rem;
+}
+
+.hero-content .cta-button {
+  background-color: white;
+  color: #171717;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.hero-content .cta-button:hover {
+  background-color: #eee;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.circular-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 20px auto;
+  border: 2px solid rgba(255, 255, 255, 0.3); /* حاشیه نازک سفید */
+}
+
+.circular-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+.header-tools img:hover,
+.social-icons img:hover {
+  transform: scale(1.2);
+  transition: ease 0.3s;
+}
+
+.header-bkg {
+  position: relative;
+  width: 100%;
+  height: 170vh;
+  background: url("../assets/images/backgroung.jpg") center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-bkg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  filter: blur(8px) brightness(0.5);
+}
+
+.header,
+.hero-content,
+.hero-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  flex-grow: 1;
+}
+
+.left-text h1 {
+  font-size: 80px;
+  line-height: 0.9;
+  margin: 0 0 20px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background: white;
+  color: #171717;
+  padding: 10px 30px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.circular-frame {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+.circular-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.line {
+  height: 1px;
+  background: white;
+  width: 300px;
+  opacity: 0.5;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 20px;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+@media (max-width: 500px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .left-text h1 {
+    font-size: 60px;
+  }
+  .circular-frame {
+    width: 300px;
+    height: 300px;
+  }
+  .header-bkg {
+    height: 250vh;
+  }
+}

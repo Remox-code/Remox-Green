@@ -1,0 +1,252 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("../images-page2/greenhouse.webp") center/cover no-repeat;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.about-hero-content h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  margin-bottom: 15px;
+}
+
+.about-hero-content p {
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  opacity: 0.8;
+}
+
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding: 80px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #90ee90; /* سبز روشن */
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.intro-image {
+  flex: 1;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-mission-vision {
+  display: flex;
+  justify-content: space-around;
+  padding: 60px 40px;
+  background-color: #1f1f1f; /* پس‌زمینه کمی تیره‌تر */
+}
+
+.mission-item,
+.vision-item {
+  text-align: center;
+  max-width: 350px;
+}
+
+.mission-item img,
+.vision-item img {
+  width: 60px;
+  filter: invert(1) hue-rotate(90deg); /* سبز کردن آیکون‌ها */
+}
+
+.mission-item h3,
+.vision-item h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #90ee90;
+}
+
+.mission-item p,
+.vision-item p {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.about-team {
+  padding: 80px 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #90ee90;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.member-card {
+  background-color: #2a2a2a;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 250px; /* عرض ثابت برای کارت‌ها */
+  text-align: center;
+}
+
+.member-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 4px solid rgba(144, 238, 144, 0.5); /* حاشیه سبز روشن */
+}
+
+.member-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.member-card p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* ---- Responsive Adjustments ---- */
+@media (max-width: 992px) {
+  .about-intro {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+  .intro-image {
+    width: 80%; /* کمی بزرگتر در حالت عمودی */
+    margin-top: 30px;
+  }
+  .about-mission-vision {
+    gap: 40px;
+    padding: 50px 20px;
+  }
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+  .member-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    height: 40vh;
+  }
+  .about-hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .about-hero-content p {
+    font-size: 1rem;
+  }
+  .intro-text h2,
+  .about-team h2 {
+    font-size: 2rem;
+  }
+  .member-card img {
+    width: 100px;
+    height: 100px;
+  }
+}
+.about-hero-content {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1.2s ease;
+}
+
+.about-hero-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.intro-text {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 0.9s ease;
+}
+
+.intro-image {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.9s ease;
+}
+
+.intro-text.show,
+.intro-image.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.mission-item,
+.vision-item {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 0.8s ease;
+}
+
+.mission-item.show,
+.vision-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.member-card {
+  opacity: 0;
+  transform: scale(0.7);
+  transition: all 0.8s ease;
+}
+
+.member-card.show {
+  opacity: 1;
+  transform: scale(1);
+}

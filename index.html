@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link type="text/css" rel="stylesheet" href="all/all.css" />
+    <link type="text/css" rel="stylesheet" href="all/header.css" />
+    <link type="text/css" rel="stylesheet" href="all/body.css" />
+    <link type="text/css" rel="stylesheet" href="all/footer.css" />
   </head>
 
   <body>
@@ -28,12 +30,18 @@
           </ul>
         </nav>
         <div class="header-tools">
-          <img src="assets/images/prof.png" alt="Profile" />
+          <a href="pages/profile/profile.html" id="cart">
+            <img src="assets/images/prof.png" alt="cart" />
+          </a>
           <a href="pages/Cart/Cart.html" id="cart">
             <img src="assets/images/cart.png" alt="cart" />
           </a>
         </div>
-        <input id="search" type="search" placeholder=" search Plant You Want" />
+        <input
+          id="search"
+          type="search"
+          placeholder=" search Plant You Want + Enter"
+        />
       </header>
 
       <main class="hero-content">
@@ -147,6 +155,5 @@
     </div>
 
     <script src="js/main.js"></script>
-    <script src="all/all.js"></script>
   </body>
 </html>

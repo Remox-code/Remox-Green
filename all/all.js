@@ -18,3 +18,21 @@ const footerObserver = new IntersectionObserver(
 );
 
 footerObserver.observe(footer);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search");
+
+  if (!searchInput) return;
+
+  const goSearch = () => {
+    const query = searchInput.value.trim();
+    if (query) {
+      localStorage.setItem("catalogSearchQuery", query);
+      window.location.href = "../catalog/catalog.html";
+    }
+  };
+
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") goSearch();
+  });
+});

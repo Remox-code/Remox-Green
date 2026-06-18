@@ -1,0 +1,20 @@
+:root {
+  --bg: #171717;
+  --bg-soft: #202020;
+  --card: rgba(255, 255, 255, 0.04);
+  --card-strong: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #f5f5f5;
+  --muted: #b7b7b7;
+  --accent: #90ee90;
+  --accent-soft: rgba(144, 238, 144, 0.14);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+}
+/* General Styles */
+body {
+  background-color: #171717;
+  color: white;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif; /* فونت مدرن */
+  line-height: 1.6;
+}

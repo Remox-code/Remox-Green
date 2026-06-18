@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="profile.css" />
+    <link type="text/css" rel="stylesheet" href="../../all/header.css" />
+    <link type="text/css" rel="stylesheet" href="../../all/footer.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-title">
+        <img src="../../assets/images/logo.jpg" alt="Logo" />
+        <h2>Remox</h2>
+      </div>
+
+      <nav class="header-links">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+
+          <li><a href="../Catalog/catalog.html">Catalog</a></li>
+          <li>
+            <a href="../Instructions/Instructions.html" class=""
+              >Instructions</a
+            >
+          </li>
+          <li><a href="../About Us/about.html">About</a></li>
+          <li><a href="../FAQ/faq.html">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-tools">
+        <a href="#" id="cart" class="tools-active">
+          <img src="../../assets/images/prof.png" alt="cart" />
+        </a>
+
+        <a href="../Cart/Cart.html" id="cart">
+          <img src="../../assets/images/cart.png" alt="cart" />
+        </a>
+      </div>
+      <input
+        id="search"
+        type="search"
+        placeholder=" search Plant You Want + Enter"
+      />
+    </header>
+
+    <div class="profile-page">
+      <header class="profile-header">
+        <div class="header-text">
+          <span class="badge">User Profile</span>
+          <h1>Account Profile</h1>
+          <p>Manage your personal information, orders, and account security</p>
+        </div>
+
+        <button class="auth-btn" id="openAuthBtn">Login / Register</button>
+      </header>
+
+      <main class="profile-layout">
+        <!-- Sidebar -->
+        <aside class="right-slide-bar">
+          <button class="right-side-btn active" data-target="info">
+            <span>👤</span>
+            <span>Personal Info</span>
+          </button>
+
+          <button class="right-side-btn" data-target="orders">
+            <span>📦</span>
+            <span>Orders</span>
+          </button>
+
+          <button class="right-side-btn" data-target="security">
+            <span>🔒</span>
+            <span>Security</span>
+          </button>
+        </aside>
+
+        <!-- Content -->
+        <section class="content">
+          <!-- Info -->
+          <div class="panel active" id="info">
+            <div class="panel-card">
+              <div class="panel-title">
+                <h2>Contact & Shipping</h2>
+                <p>Details used for shipping your orders</p>
+              </div>
+
+              <div class="form-grid">
+                <div class="input-group full">
+                  <label for="address">Address</label>
+                  <input
+                    id="address"
+                    type="text"
+                    placeholder="e.g., Street Name, Number, City"
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="postal">Postal Code</label>
+                  <input
+                    id="postal"
+                    type="text"
+                    placeholder="e.g., 1234567890"
+                  />
+                </div>
+
+                <div class="input-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    placeholder="e.g., +1 234 567 890"
+                  />
+                </div>
+              </div>
+
+              <button class="save-btn" type="button">Save Changes</button>
+            </div>
+          </div>
+
+          <!-- Orders -->
+          <div class="panel" id="orders">
+            <div class="panel-card">
+              <div class="panel-title">
+                <h2>My Orders</h2>
+                <p>Track the status of your orders at a glance</p>
+              </div>
+
+              <div class="stats-grid">
+                <div class="stat-card pending">
+                  <div class="stat-icon">⏳</div>
+                  <div class="stat-info">
+                    <span>Pending</span>
+                    <strong>3</strong>
+                  </div>
+                </div>
+
+                <div class="stat-card delivered">
+                  <div class="stat-icon">✅</div>
+                  <div class="stat-info">
+                    <span>Delivered</span>
+                    <strong>12</strong>
+                  </div>
+                </div>
+
+                <div class="stat-card canceled">
+                  <div class="stat-icon">❌</div>
+                  <div class="stat-info">
+                    <span>Canceled</span>
+                    <strong>1</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security -->
+          <div class="panel" id="security">
+            <div class="panel-card">
+              <div class="panel-title">
+                <h2>Account Security</h2>
+                <p>Manage your login credentials and authentication</p>
+              </div>
+
+              <div class="security-box">
+                <p>
+                  Use the login or register forms to manage your account access.
+                </p>
+                <button class="auth-btn large" id="openAuthBtn2">
+                  Login / Register
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="authModal">
+      <div class="modal-box">
+        <button class="close-btn" id="closeAuthBtn">×</button>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-form="loginForm">Login</button>
+          <button class="auth-tab" data-form="registerForm">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm" class="auth-form active">
+          <h3>Login</h3>
+          <div class="input-group">
+            <label for="loginEmail">Email</label>
+            <input
+              id="loginEmail"
+              type="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <div class="input-group">
+            <label for="loginPassword">Password</label>
+            <input
+              id="loginPassword"
+              type="password"
+              placeholder="Enter password"
+            />
+          </div>
+          <button type="submit" class="submit-btn">Login</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" class="auth-form">
+          <h3>Register</h3>
+          <div class="input-group">
+            <label for="regUsername">Username</label>
+            <input
+              id="regUsername"
+              type="text"
+              placeholder="Choose a username"
+            />
+          </div>
+          <div class="input-group">
+            <label for="regEmail">Email</label>
+            <input id="regEmail" type="email" placeholder="example@gmail.com" />
+          </div>
+          <div class="input-group">
+            <label for="regPassword">Password</label>
+            <input
+              id="regPassword"
+              type="password"
+              placeholder="Create a password"
+            />
+          </div>
+          <button type="submit" class="submit-btn">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="premium-footer">
+      <!-- Top Decorative Element -->
+      <div class="footer-top-decorator"></div>
+
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Column 1: Brand Story -->
+          <div class="footer-column brand-col">
+            <div class="footer-logo-wrapper">
+              <img
+                src="../../assets/images/logo2.jpg"
+                alt="Remox Logo"
+                class="footer-logo-img"
+              />
+              <h2 class="footer-brand-name">Remox</h2>
+            </div>
+            <p class="brand-description">
+              Bringing the serenity of nature into your urban lifestyle. Curated
+              plants for your modern sanctuary.
+            </p>
+            <div class="social-media-wrapper">
+              <a href="https://instagram.com/remox-code" class="social-icon"
+                ><img src="../../assets/images/instagram.png" alt="Instagram"
+              /></a>
+              <a href="https://t.me/Remox_4" class="social-icon"
+                ><img
+                  src="../../assets/images/telegram-svgrepo-com.png"
+                  alt="Te;egram"
+              /></a>
+              <a href="https://t.me/Remox_4" class="social-icon"
+                ><img
+                  src="../../assets/images/facebook-svgrepo-com.png"
+                  alt="Facebook"
+              /></a>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Navigation -->
+          <div class="footer-column">
+            <h4 class="footer-title">Explore</h4>
+            <ul class="footer-links-list">
+              <li><a href="catalog.html">New Arrivals</a></li>
+              <li><a href="catalog.html">Best Sellers</a></li>
+              <li><a href="Instructions.html">Plant Care</a></li>
+              <li><a href="about.html">Our Story</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Support -->
+          <div class="footer-column">
+            <h4 class="footer-title">Support</h4>
+            <ul class="footer-links-list">
+              <li><a href="faq.html">Help Center</a></li>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="footer-column newsletter-col">
+            <h4 class="footer-title">Join the Green Club</h4>
+            <p>
+              Get exclusive plant care tips and early access to new arrivals.
+            </p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Join</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p>
+            &copy; 2024 <span class="highlight">Remox</span> Botanical Studio.
+            All rights reserved.
+          </p>
+          <div class="payment-methods">
+            <!-- Placeholder icons for payments -->
+            <img
+              src="../images-page2/visa-classic-svgrepo-com.png"
+              alt="Visa"
+            />
+            <img
+              src="../images-page2/mastercard-svgrepo-com.svg"
+              alt="Mastercard"
+            />
+            <img
+              src="../images-page2/applepay-svgrepo-com.png"
+              alt="Apple Pay"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="profile.js"></script>
+    <script src="../../all/all.js"></script>
+  </body>
+</html>

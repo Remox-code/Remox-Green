@@ -60,3 +60,46 @@ function showToast(message = "Added") {
     toast.classList.remove("show");
   }, 2500);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = Array.from(document.querySelectorAll(".item-card"));
+  const query = (localStorage.getItem("catalogSearchQuery") || "")
+    .toLowerCase()
+    .trim();
+
+  const searchInput = document.getElementById("search");
+
+  function filterCards(term) {
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const title = card.querySelector("h2")?.textContent.toLowerCase() || "";
+      const desc = card.querySelector("p")?.textContent.toLowerCase() || "";
+      const price =
+        card.querySelector(".price")?.textContent.toLowerCase() || "";
+
+      const match =
+        title.includes(term) || desc.includes(term) || price.includes(term);
+
+      card.style.display = match ? "flex" : "none";
+      if (match) visibleCount++;
+    });
+
+    const emptyState = document.getElementById("no-results");
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? "block" : "none";
+    }
+  }
+
+  if (query) {
+    if (searchInput) searchInput.value = query;
+    filterCards(query);
+    localStorage.removeItem("catalogSearchQuery");
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+      filterCards(e.target.value.toLowerCase().trim());
+    });
+  }
+});
